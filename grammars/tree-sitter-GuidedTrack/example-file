@@ -1,0 +1,19 @@
+>> exampleVariable = "string"
+>> exampleVariable2 = "anotherString"
+>> example_variable = "bool"
+
+>> example_variable = [ "Array Type containing a string" , "anotherString" ]
+
+>> example_variable2 = [ ]
+>> example_variable2 = [ "string" ]
+
+>> example_dictionary = { "string" -> "anotherString" }
+
+*if: item in Array
+	do this
+
+*for: item in Array
+	do this
+
+*while: x < 0
+	doing this
