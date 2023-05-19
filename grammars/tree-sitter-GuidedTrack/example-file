@@ -11,9 +11,17 @@
 
 *if: item in Array
 	do this
+	*if: item in Array
+		block in block here
+		extra line for test
+	dedent
+
+test text
 
 *for: item in Array
 	do this
+	this is a block example_dictionary
+	block length
 
 *while: x < 0
 	doing this

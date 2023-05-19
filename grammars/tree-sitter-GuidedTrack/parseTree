@@ -1,0 +1,88 @@
+(source_file [0, 0] - [27, 0]
+  (variable_definition [0, 0] - [0, 29]
+    (identifier [0, 3] - [0, 18])
+    (string_type [0, 21] - [0, 29]
+      (identifier [0, 22] - [0, 28])))
+  (variable_definition [1, 0] - [1, 37]
+    (identifier [1, 3] - [1, 18])
+    (number [1, 18] - [1, 19])
+    (string_type [1, 22] - [1, 37]
+      (identifier [1, 23] - [1, 36])))
+  (variable_definition [2, 0] - [2, 28]
+    (identifier [2, 3] - [2, 19])
+    (string_type [2, 22] - [2, 28]
+      (identifier [2, 23] - [2, 27])))
+  (variable_definition [4, 0] - [4, 76]
+    (identifier [4, 3] - [4, 19])
+    (array_type [4, 22] - [4, 76]
+      (string_type [4, 24] - [4, 56]
+        (identifier [4, 25] - [4, 30])
+        (identifier [4, 31] - [4, 35])
+        (identifier [4, 36] - [4, 46])
+        (identifier [4, 47] - [4, 48])
+        (identifier [4, 49] - [4, 55]))
+      (comma_divider [4, 57] - [4, 58])
+      (string_type [4, 59] - [4, 74]
+        (identifier [4, 60] - [4, 73]))))
+  (variable_definition [6, 0] - [6, 26]
+    (identifier [6, 3] - [6, 19])
+    (number [6, 19] - [6, 20])
+    (array_type [6, 23] - [6, 26]))
+  (variable_definition [7, 0] - [7, 35]
+    (identifier [7, 3] - [7, 19])
+    (number [7, 19] - [7, 20])
+    (array_type [7, 23] - [7, 35]
+      (string_type [7, 25] - [7, 33]
+        (identifier [7, 26] - [7, 32]))))
+  (variable_definition [9, 0] - [9, 55]
+    (identifier [9, 3] - [9, 21])
+    (dictionary_type [9, 24] - [9, 55]
+      (dictionary_pair [9, 26] - [9, 53]
+        (string_type [9, 26] - [9, 34]
+          (identifier [9, 27] - [9, 33]))
+        (string_type [9, 38] - [9, 53]
+          (identifier [9, 39] - [9, 52])))))
+  (if_function_definition [11, 0] - [16, 7]
+    condition: (identifier [11, 5] - [11, 9])
+    condition: (in_operator [11, 10] - [11, 12])
+    condition: (identifier [11, 13] - [11, 18])
+    if_block: (block [11, 18] - [16, 7]
+      (plain_text [12, 1] - [12, 3])
+      (plain_text [12, 4] - [12, 8])
+      (if_function_definition [13, 1] - [15, 21]
+        condition: (identifier [13, 6] - [13, 10])
+        condition: (in_operator [13, 11] - [13, 13])
+        condition: (identifier [13, 14] - [13, 19])
+        if_block: (block [13, 19] - [15, 21]
+          (plain_text [14, 2] - [14, 7])
+          (plain_text [14, 8] - [14, 10])
+          (plain_text [14, 11] - [14, 16])
+          (plain_text [14, 17] - [14, 21])
+          (plain_text [15, 2] - [15, 7])
+          (plain_text [15, 8] - [15, 12])
+          (plain_text [15, 13] - [15, 16])
+          (plain_text [15, 17] - [15, 21])))
+      (plain_text [16, 1] - [16, 7])))
+  (plain_text [18, 0] - [18, 4])
+  (plain_text [18, 5] - [18, 9])
+  (for_function_definition [20, 0] - [23, 13]
+    condition: (identifier [20, 6] - [20, 10])
+    condition: (in_operator [20, 11] - [20, 13])
+    condition: (identifier [20, 14] - [20, 19])
+    for_block: (block [20, 19] - [23, 13]
+      (plain_text [21, 1] - [21, 3])
+      (plain_text [21, 4] - [21, 8])
+      (plain_text [22, 1] - [22, 5])
+      (plain_text [22, 6] - [22, 8])
+      (plain_text [22, 9] - [22, 10])
+      (plain_text [22, 11] - [22, 16])
+      (plain_text [22, 17] - [22, 35])
+      (plain_text [23, 1] - [23, 6])
+      (plain_text [23, 7] - [23, 13])))
+  (while_function_definition [25, 0] - [26, 11]
+    condition: (identifier [25, 8] - [25, 9])
+    condition: (lessThan_operator [25, 10] - [25, 11])
+    condition: (number [25, 12] - [25, 13])
+    while_block: (block [25, 13] - [26, 11]
+      (plain_text [26, 1] - [26, 6])
+      (plain_text [26, 7] - [26, 11]))))

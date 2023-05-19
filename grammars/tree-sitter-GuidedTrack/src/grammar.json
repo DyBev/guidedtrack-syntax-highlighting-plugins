@@ -22,15 +22,63 @@
         {
           "type": "SYMBOL",
           "name": "_keyword_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_command_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "plain_text"
         }
       ]
     },
-    "_block": {
+    "_suite": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_indent"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "block"
+            }
+          ]
+        }
+      ]
+    },
+    "_block_start": {
       "type": "SEQ",
       "members": [
         {
           "type": "SYMBOL",
+          "name": "_newline"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_indent"
+        }
+      ]
+    },
+    "_block_end": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_dedent"
+        }
+      ]
+    },
+    "block": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "_block_start"
         },
         {
           "type": "REPEAT",
@@ -41,7 +89,29 @@
         },
         {
           "type": "SYMBOL",
-          "name": "_dedent"
+          "name": "_block_end"
+        }
+      ]
+    },
+    "_command_definition": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "save_command_definition"
+        }
+      ]
+    },
+    "save_command_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "*save:"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_expression"
         }
       ]
     },
@@ -55,6 +125,14 @@
         {
           "type": "SYMBOL",
           "name": "while_function_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "for_function_definition"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "question_function_definition"
         }
       ]
     },
@@ -66,19 +144,45 @@
           "value": "*if:"
         },
         {
-          "type": "REPEAT",
+          "type": "FIELD",
+          "name": "condition",
           "content": {
-            "type": "CHOICE",
+            "type": "SEQ",
             "members": [
               {
                 "type": "SYMBOL",
                 "name": "_expression"
               },
               {
-                "type": "SYMBOL",
-                "name": "_operator"
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "_operator"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "_expression"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
               }
             ]
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "if_block",
+          "content": {
+            "type": "SYMBOL",
+            "name": "block"
           }
         }
       ]
@@ -91,17 +195,119 @@
           "value": "*while:"
         },
         {
-          "type": "REPEAT",
+          "type": "FIELD",
+          "name": "condition",
           "content": {
-            "type": "CHOICE",
+            "type": "SEQ",
             "members": [
               {
                 "type": "SYMBOL",
                 "name": "_expression"
               },
               {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "_operator"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "_expression"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "while_block",
+          "content": {
+            "type": "SYMBOL",
+            "name": "block"
+          }
+        }
+      ]
+    },
+    "for_function_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "*for:"
+        },
+        {
+          "type": "FIELD",
+          "name": "condition",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
                 "type": "SYMBOL",
-                "name": "_operator"
+                "name": "_expression"
+              },
+              {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "_operator"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "_expression"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "BLANK"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "type": "FIELD",
+          "name": "for_block",
+          "content": {
+            "type": "SYMBOL",
+            "name": "block"
+          }
+        }
+      ]
+    },
+    "question_function_definition": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "*question:"
+        },
+        {
+          "type": "FIELD",
+          "name": "question",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "REPEAT",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "_expression"
+                }
               }
             ]
           }
@@ -278,6 +484,10 @@
         {
           "type": "SYMBOL",
           "name": "number"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "question"
         }
       ]
     },
@@ -322,6 +532,14 @@
       "type": "PATTERN",
       "value": "[A-Za-z_]+"
     },
+    "question": {
+      "type": "PATTERN",
+      "value": "[A-Za-z_?]+"
+    },
+    "plain_text": {
+      "type": "PATTERN",
+      "value": "[A-Za-z_]+"
+    },
     "number": {
       "type": "PATTERN",
       "value": "\\d+"
@@ -338,11 +556,43 @@
   "externals": [
     {
       "type": "SYMBOL",
+      "name": "_newline"
+    },
+    {
+      "type": "SYMBOL",
       "name": "_indent"
     },
     {
       "type": "SYMBOL",
       "name": "_dedent"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_string_start"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_string_content"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_string_end"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "_comment"
+    },
+    {
+      "type": "STRING",
+      "value": "]"
+    },
+    {
+      "type": "STRING",
+      "value": ")"
+    },
+    {
+      "type": "STRING",
+      "value": "}"
     }
   ],
   "inline": [],

@@ -1,0 +1,68 @@
+============
+if condition
+============
+
+*if: x < 10
+	do something
+
+---
+
+(source_file
+	(if_function_definition
+		condition: (identifier)
+		condition: (lessThan_operator)
+		condition: (number)
+		if_block: (block
+			(plain_text)
+			(plain_text))))
+
+
+=============
+for condition
+=============
+
+*for: item in array
+	do something
+
+---
+
+(source_file
+	(for_function_definition
+		condition: (identifier)
+		condition: (in_operator)
+		condition: (identifier)
+		for_block: (block
+			(plain_text)
+			(plain_text))))
+
+===============
+while condition
+===============
+
+*while: x > 10
+	do something
+
+---
+
+(source_file
+	(while_function_definition
+		condition: (identifier)
+		condition: (moreThan_operator)
+		condition: (number)
+		while_block: (block
+			(plain_text)
+			(plain_text))))
+
+=================
+question function
+=================
+
+*question: Question added
+
+---
+
+(source_file
+	(question_function_definition
+		question: (identifier)
+		question_block: (block
+			(plain_text)
