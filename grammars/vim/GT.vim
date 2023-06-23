@@ -61,7 +61,7 @@ syn match GuidedTrackComment '\v--.*$'
 syn match GuidedTrackDebug '\v--DEBUG.*$'
 
 "error highlighting
-syn match GuidedTrackError '\*\(confirm\|blank\|multiple\|quit\|other\|shuffle\|yaxis\|xaxis\|yaxis\|trendline\|clear\|email\|body\|login\|return\|everytime\|share\|events\|startup\|success\|error\|throwaway\|page\|searchable\|navigation\)\(:\)\@='
+syn match GuidedTrackError '\*\(confirm\|blank\|multiple\|quit\|other\|shuffle\|yaxis\|xaxis\|yaxis\|trendline\|clear\|email\|body\|login\|return\|everytime\|share\|events\|startup\|success\|error\|throwaway\|page\|searchable\)\(:\)\@='
 syn match GuidedTrackError '\*\(question\|type\|before\|after\|min\|max\|tip\|time\|date\|icon\|countdown\|header\|default\|tags\|summary\|chart\|data\|color\|opacity\|ticks\|position\|rollovers\|wait\|image\|caption\|repeat\|subject\|to\|when\|identifier\|every\|experiment\|program\|required\|video\|button\|maintain\|audio\|start\|hide\|point\|progress\|repeat\|title\|picture\|description\|back\|menu\|classes\|trigger\|send\|service\|path\|method\|label\|goto\|switch\|points\|if\|while\|for\|with\|set\|answers\|save\|name\|placeholder\)\>\(:\)\@!'
 
 syn match GuidedTrackError '\(\(^.*\)\?[a-zA-Z0-9_-]\>\.\)\@<=\(max\|mean\|size\|median\|min\|shuffle\|size\|unique\|keys\|text\|type\)\((\)\@='
