@@ -189,10 +189,10 @@
 	*frequency: recurring
 	*management
 	*success
-		goto: afterSuccessfulPurchaseLabel
+		*goto: afterSuccessfulPurchaseLabel
 			*reset
 	*error
-		goto: afterFailedPurchaseLabel
+		*goto: afterFailedPurchaseLabel
 			*reset
 
 *question: Why?
@@ -206,6 +206,7 @@
 	*countdown: 30.seconds
 	*tags: tag1, tag2, tag3
 	*answers: [["yes", 1], ["no", -1], ["maybe so", 0]]
+	*answers: hello
 	*blank
 	*multiple
 	*default: maybe so
